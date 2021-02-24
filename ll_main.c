@@ -3,7 +3,7 @@
 #include "linkedlist.h"
 
 int main( )
-{ 
+{
    LLPtr startPtr = NULL; // initially there are no nodes
    unsigned int choice; // user's choice
    int item; // value entered by user
@@ -13,18 +13,21 @@ int main( )
    scanf( "%u", &choice );
 
    // loop while user does not choose 3
-   while ( choice != 3 ) { 
+   while ( choice != 3 ) {
 
-      switch ( choice ) { 
+      switch ( choice ) {
          case 1:
             printf( "%s", "Enter a number: " );
             scanf( "%d", &item );
             insert( &startPtr, item ); // insert item in list
             printList( startPtr );
+            startPtr = reverse(startPtr);
+            printList2( startPtr );
+            startPtr = reverse(startPtr);
             break;
          case 2: // delete an element
             // if list is not empty
-            if ( !isEmpty( startPtr ) ) { 
+            if ( !isEmpty( startPtr ) ) {
                printf( "%s", "Enter number to be deleted: " );
                scanf( "%d", &item );
 
